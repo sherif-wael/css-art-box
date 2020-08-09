@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import handler from "../utils/handleMouseDown";
-
+import touchHandler from "../utils/handleTouchStart";
 
 function AngleInput({change, value}){
     let wrapper = useRef(null);
@@ -15,7 +15,9 @@ function AngleInput({change, value}){
     return (
         <div class="angle-input" ref={wrapper} 
             style={{transform: `rotate(${value}deg)`}}
-            onMouseDown={e => handler({e, parent: document, onMove: callback})}>
+            onMouseDown={e => handler({e, parent: document, onMove: callback})}
+            onTouchStart={e => handler({e, parent: document, onMove: callback})}
+            >
         </div>
     )
 }
