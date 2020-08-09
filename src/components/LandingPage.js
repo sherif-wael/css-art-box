@@ -29,7 +29,7 @@ export default function LandingPage(){
             <section class="intro-section">
                 <div class="high-index">
                     <header class="header flex">
-                        <h1>CSS ARTS</h1>
+                        <h1>CSS TOOLS</h1>
                     </header>
                     <div class="about side-paddings">
                         <div class="about-info">
