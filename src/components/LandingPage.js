@@ -78,7 +78,7 @@ export default function LandingPage(){
             <section class="css-for-beginners side-paddings grid-wrapper">
                 <div class="header-wrapper">
                     <h2>an easier way for beginners to get to know css.</h2>
-                    <Link to="/playground" className="border-link">start now</Link>
+                    <Link to="/" className="border-link">start now</Link>
                 </div>
                 <div class="css-coding">
                     <img src={cssCoding} alt="css coding" />
