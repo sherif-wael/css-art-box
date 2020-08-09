@@ -5,7 +5,7 @@ import handler from "../utils/handleMouseDown";
 
 function Resize({resize}){
     return (
-        <div class="resize-box" onMouseDown={e => handler({e, parent: document, onMove: resize})}></div>
+        <div className="resize-box" onMouseDown={e => handler({e, parent: document, onMove: resize})}></div>
     )
 }
 

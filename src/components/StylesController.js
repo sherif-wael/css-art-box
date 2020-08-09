@@ -8,7 +8,7 @@ import SelectedLayerStyles from "./SelectedLayerStyles";
 function StylesController({selected, layers}){
     let layer = selected ? layers.find(l => l.id === selected) : null;
     return (
-        <div class="styles-controller">
+        <div className="styles-controller">
             <ContainerValues />
             {
                 layer 

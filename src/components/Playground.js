@@ -17,11 +17,11 @@ function Playground({container, layers, selected, selectLayer, setLayerDimension
     }
     let styles = {backgroundColor: container.backgroundColor, perspective: `${container.perspective}px`};
     return (
-        <div class="playground" style={styles} ref={playground} onMouseDown={handleMouseDown}>
+        <div className="playground" style={styles} ref={playground} onMouseDown={handleMouseDown}>
             {
                 layers.filter(layer => layer.styles.relativeTo === "container" || 
                               !layers.some(l => l.id === layer.styles.relativeTo)).map(layer => (
-                                <Layer layer={layer} selectLayer={selectLayer} layers={layers}
+                                <Layer layer={layer} selectLayer={selectLayer} layers={layers} key={layer.id}
                                     setLayerDimensions={setLayerDimensions} setLayerPosition={setLayerPosition}
                                     selected={selected} setPos={setPos(layer.id, layer.styles.dimensions)}/>
                               ))

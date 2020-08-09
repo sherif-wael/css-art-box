@@ -8,13 +8,13 @@ function Code({layers, container}){
     let htmlCode = getHtmlCode(layers, "container", 0);
     let cssCode = getCssCode(layers, container);
     return (
-        <div class="code-page">
-            <div class="pre">
+        <div className="code-page">
+            <div className="pre">
                 <h3>HTML</h3>
                 <pre dangerouslySetInnerHTML={{__html: htmlCode}}>
                 </pre>
             </div>
-            <div class="pre">
+            <div className="pre">
                 <h3>CSS</h3>
                 <pre dangerouslySetInnerHTML={{__html: cssCode}}>
                 </pre>

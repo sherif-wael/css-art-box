@@ -16,28 +16,28 @@ function ContainerValues({container, addLayer, setContainerStyles, layers, histo
     }
     return (
         <div>
-            <div class="container-header flex-center">
+            <div className="container-header flex-center">
                 <h2>CONTAINER</h2>
             </div>
-            <div class="lg-margin flex-align-center">
-                <label class="label" htmlFor="containerBg">background-color:</label>
-                <input type="color" id="containerBg" value={container.backgroundColor} class="color-input"
+            <div className="lg-margin flex-align-center">
+                <label className="label" htmlFor="containerBg">background-color:</label>
+                <input type="color" id="containerBg" value={container.backgroundColor} className="color-input"
                         onChange={e => setContainerStyles("backgroundColor", e.target.value)} />
             </div>
-            <div class="lg-margin flex-align-center">
-                <label class="label" htmlFor="containerPerspecive">perspective:</label>
-                <input type="number" id="containerPerspective" class="number-input" 
+            <div className="lg-margin flex-align-center">
+                <label className="label" htmlFor="containerPerspecive">perspective:</label>
+                <input type="number" id="containerPerspective" className="number-input" 
                         onChange={e => setContainerStyles("perspective", e.target.value)} />
             </div>
-            <div class="flex lg-margin">
-                <input type="text" class="flex-grow text-input" onChange={e => setName(e.target.value)} value={name}/>
-                <button onClick={() => handleClick(name)} class="add-layer-btn btn white-btn">add layer</button>
+            <div className="flex lg-margin">
+                <input type="text" className="flex-grow text-input" onChange={e => setName(e.target.value)} value={name}/>
+                <button onClick={() => handleClick(name)} className="add-layer-btn btn white-btn">add layer</button>
             </div>
-            <div class="flex-center lg-margin">
-                <button class="btn view-code-btn black-btn" onClick={() => history.push("/code")}>code</button>
-                <button class="btn reset-btn white-btn" onClick={resetState}>reset</button>
+            <div className="flex-center lg-margin">
+                <button className="btn view-code-btn black-btn" onClick={() => history.push("/code")}>code</button>
+                <button className="btn reset-btn white-btn" onClick={resetState}>reset</button>
             </div>
-            <div class="divider lg-margin"></div>
+            <div className="divider lg-margin"></div>
         </div>
     )
 }

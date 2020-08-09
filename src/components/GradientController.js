@@ -34,28 +34,28 @@ function GradientController({layer, setLayerGradient, changeGradientType, setGra
         }
     }
     return (
-        <div class="gradient-controller">
-            <div class="divider"></div>
-            <div class="collapse-header flex-space-between">
-                <div class="flex-align-center" onClick={() => setState(!state)}>
-                    <i class={`fas fa-angle-right ${state.transform ? "rotate" : ""}`}></i>
+        <div className="gradient-controller">
+            <div className="divider"></div>
+            <div className="collapse-header flex-space-between">
+                <div className="flex-align-center" onClick={() => setState(!state)}>
+                    <i className={`fas fa-angle-right ${state.transform ? "rotate" : ""}`}></i>
                     <p>background</p>
                 </div>
-                <div class="flex-align-center">
-                    <input type="checkbox" class="checkbox" checked={gradient.applyGradient}
+                <div className="flex-align-center">
+                    <input type="checkbox" className="checkbox" checked={gradient.applyGradient}
                                     onChange={e => setLayerGradient(layer.id, "applyGradient", e.target.checked)} />
-                    <label class="label">apply</label>
-                    <input type="checkbox" class="checkbox" checked={gradient.repeating}
+                    <label className="label">apply</label>
+                    <input type="checkbox" className="checkbox" checked={gradient.repeating}
                                     onChange={e => setLayerGradient(layer.id, "repeating", e.target.checked)} />
-                    <label class="label">repeat</label>
+                    <label className="label">repeat</label>
                 </div>
             </div>
             <Collapse isOpened={state}>
-               <div class="gradient-wrapper">
-                    <div class="flex-center type-tabs">
+               <div className="gradient-wrapper">
+                    <div className="flex-center type-tabs">
                         {
                             ["linear", "radial", "conic"].map((type, i) => (
-                                <div onClick={() => changeGradientType(layer.id, type)}
+                                <div onClick={() => changeGradientType(layer.id, type)} key={i}
                                      className={type === gradient.type ? "selected" : ""}   >
                                     {type}
                                 </div>
@@ -63,7 +63,7 @@ function GradientController({layer, setLayerGradient, changeGradientType, setGra
                         }
                     </div>
                     <GradientLayout gradient={gradient} layerId={layer.id} setGradientLayout={setGradientLayout} />
-                    <div class="gradient-bar" ref={bar} onMouseDown={addColor}
+                    <div className="gradient-bar" ref={bar} onMouseDown={addColor}
                         style={{background: setGradient(gradient)}}>
                         {
                             gradient.colors.map((color, i) => (
@@ -74,20 +74,20 @@ function GradientController({layer, setLayerGradient, changeGradientType, setGra
                                 style={{left: `${color.start}%`}} key={i}
                                 className={selectedColor === i ? "selected controller" : "controller"}
                                 >
-                                    <span class="start-value">{color.start}</span>
+                                    <span className="start-value">{color.start}</span>
                                 </span>
                             ))
                         }
                     </div>
-                    <div class="selected-color-controls flex-space-between">
-                        <div class=" flex-align-center lg-margin">
-                            <label class="label">color:</label>
-                            <input type="color" class="color-input" value={gradient.colors[selectedColor].color}
+                    <div className="selected-color-controls flex-space-between">
+                        <div className=" flex-align-center lg-margin">
+                            <label className="label">color:</label>
+                            <input type="color" className="color-input" value={gradient.colors[selectedColor].color}
                                     onChange={e => setGradientColor(layer.id, selectedColor, "color", e.target.value)} />
                         </div>
                         <div>
-                            <button class="btn delete-shadow-btn" onClick={deleteSelectedColor}>
-                                <i class="fas fa-trash-alt"></i>
+                            <button className="btn delete-shadow-btn" onClick={deleteSelectedColor}>
+                                <i className="fas fa-trash-alt"></i>
                             </button>
                         </div>
                     </div>

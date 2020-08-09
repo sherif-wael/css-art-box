@@ -25,66 +25,66 @@ export default function LandingPage(){
        })
     })
     return (
-        <div class="landing-page">
-            <section class="intro-section">
-                <div class="high-index">
-                    <header class="header flex">
+        <div className="landing-page">
+            <section className="intro-section">
+                <div className="high-index">
+                    <header className="header flex">
                         <h1>CSS TOOLS</h1>
                     </header>
-                    <div class="about side-paddings">
-                        <div class="about-info">
+                    <div className="about side-paddings">
+                        <div className="about-info">
                             <h2>CREATE BEUATIFUL CSS SHAPES, UNLEASH THE POWER OF CSS.</h2>
                             <Link to="/playground">PLAYGROUND &#8594;</Link>
                         </div>
-                        <div class="img-responsive">
+                        <div className="img-responsive">
                             <img src={canvas} alt="illustration" />
                         </div>
                     </div>
                 </div>
-                <div class="overlay"></div> 
+                <div className="overlay"></div> 
             </section>
-            <section class="gsap-section side-paddings grid-wrapper">
-                <div class="illus img-responsive">
+            <section className="gsap-section side-paddings grid-wrapper">
+                <div className="illus img-responsive">
                     <img src={css} alt="illustration" />
                 </div>
-                <div class="code-wrapper" ref={codeWrapper}>
-                    <pre class="html-code-view code-view">
+                <div className="code-wrapper" ref={codeWrapper}>
+                    <pre className="html-code-view code-view">
                         {
                             Object.keys(htmlCode).map((prop, i) => (
-                                <div key={i}><span dangerouslySetInnerHTML={{__html: htmlCode[prop]}} ref={el => codeLines.current[i] = el} class="line"></span></div>
+                                <div key={i}><span dangerouslySetInnerHTML={{__html: htmlCode[prop]}} ref={el => codeLines.current[i] = el} className="line"></span></div>
                             ))
                         }
                     </pre>
-                    <pre class="css-code-view code-view">
+                    <pre className="css-code-view code-view">
                         {
                             Object.keys(cssCode).map((prop, i) => (
-                                <div key={i}><span dangerouslySetInnerHTML={{__html: cssCode[prop]}} ref={el => codeLines.current[i + 5] = el} class="line"></span></div>
+                                <div key={i}><span dangerouslySetInnerHTML={{__html: cssCode[prop]}} ref={el => codeLines.current[i + 5] = el} className="line"></span></div>
                             ))
                         }
                     </pre>
                 </div>
             </section>
-            <section class="arts-section">
-                <div class="arts-grid side-paddings grid-wrapper">
-                    <div class="header-wrapper arts-intro">
+            <section className="arts-section">
+                <div className="arts-grid side-paddings grid-wrapper">
+                    <div className="header-wrapper arts-intro">
                         <h2>all these great arts can be created using our tool.</h2>
                     </div>
-                    <div class="arts-examples">
+                    <div className="arts-examples">
                         <img src={pureCss1} alt="pure css art" />
                         <img src={pureCss4} alt="pure css art" />
                     </div>
                 </div> 
             </section>
-            <section class="css-for-beginners side-paddings grid-wrapper">
-                <div class="header-wrapper">
+            <section className="css-for-beginners side-paddings grid-wrapper">
+                <div className="header-wrapper">
                     <h2>an easier way for beginners to get to know css.</h2>
                     <Link to="/" className="border-link">start now</Link>
                 </div>
-                <div class="css-coding">
+                <div className="css-coding">
                     <img src={cssCoding} alt="css coding" />
                 </div>
             </section>
-            <footer class="side-padding">
+            <footer className="side-padding">
                 <h3>built with <span>&hearts;</span> by <b>sherif wael</b></h3>
             </footer>
         </div>

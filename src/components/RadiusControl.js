@@ -87,13 +87,13 @@ function RadiusControl({layer, setLayerRadius}){
     }
     return (
     <div>
-        <div class="text-center">
-            <label class="label">{state.border}-{state.pos}:</label>
-            <input type="number" class="number-input with-range" 
+        <div className="text-center">
+            <label className="label">{state.border}-{state.pos}:</label>
+            <input type="number" className="number-input with-range" 
                     value={layer.styles.borderRadius[state.border][state.pos]}
                     onChange={e => setLayerRadius(layer.id, state.border, state.pos, e.target.value)}
                     palcegholder="%" />
-            <button class="btn apply-for-all white-btn" onClick={applyForAll}>apply for all</button>
+            <button className="btn apply-for-all white-btn" onClick={applyForAll}>apply for all</button>
         </div>
         <div ref={wrapper} className="radius-controller">
             {
@@ -113,7 +113,7 @@ function RadiusControl({layer, setLayerRadius}){
                                 }} key={key}></span>
                 })
             }
-            <div class="radius-illustration" style={{borderRadius: createBorderRadius(layer.styles.borderRadius)}}></div>
+            <div className="radius-illustration" style={{borderRadius: createBorderRadius(layer.styles.borderRadius)}}></div>
         </div>
     </div>
     )

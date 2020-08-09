@@ -132,6 +132,11 @@ body {
 
 .color-input{
   border: none;
+  border-radius: 5px;
+}
+
+.color-input:focus, .color-input:active{
+  outline: none;
 }
 
 .label{

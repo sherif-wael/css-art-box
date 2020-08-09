@@ -16,7 +16,7 @@ function App(){
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/playground" exact render={() => (
-            <div class="drawer">
+            <div className="drawer">
               <Playground />
               <StylesController />
             </div>

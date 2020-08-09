@@ -12,7 +12,7 @@ function AngleInput({change, value}){
         change(Math.round(angle));
     }
     return (
-        <div class="angle-input" ref={wrapper} 
+        <div className="angle-input" ref={wrapper} 
             style={{transform: `rotate(${value}deg)`}}
             onMouseDown={e => handler({e, parent: document, onMove: callback})} >
         </div>
