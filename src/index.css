@@ -260,7 +260,7 @@ body {
   left: 100%;
   width: 12px;
   height: 12px;
-  background-color: green;
+  background-color: #2189d9;
   transform: translate(-50%, -50%);
   cursor: nw-resize;
   z-index: 2;
@@ -722,7 +722,7 @@ body {
   padding: 4px 15px 5px;
   text-decoration: none;
   border-radius: 30px;
-  font-size: 0.8em;
+  font-size: 0.85em;
   font-weight: 500;
   background-color: transparent;
   transition: background-color 200ms ease,
@@ -768,6 +768,12 @@ footer span{
 }
 
 @media screen and (max-width: 600px){
+  .header{
+    padding: 15px 20px;
+  }
+  .header h1{
+    font-size: 22px;
+  }
   .about-info, .header-wrapper{
     font-size: 22px;
   }
@@ -778,10 +784,23 @@ footer span{
                 -webkit-linear-gradient( #efe 70%, #cefc 100%);
     background-size: 350px;
   }
+  .code-page{
+    grid-template-columns: 1fr;
+  }
+  .pre{
+    height: auto;
+    min-height: 50vh;
+  }
 }
 
 
 @media screen and (max-width: 400px){
+  .header{
+    padding: 15px 15px;
+  }
+  .header h1{
+    font-size: 20px;
+  }
   .about-info{
     font-size: 22px;
   }
