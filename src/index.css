@@ -474,16 +474,26 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: #c5c8c6;
-  background-color: #1d1f21;
   background-color: #001628;
   font-size: 20px;
+}
+.go-back{
+  border: none;
+  background-color: transparent;
+}
+.go-back{
+  position: fixed;
+  top: 10px;
+  right: 30px;
+  font-size: 36px;
+  color: #fff;
 }
 
 .pre{
   box-sizing: border-box;
   padding: 0px 20px;
-  height: 100vh;
   overflow: auto;
+  height: 100vh;
 }
 .pre h3{
   color: #fff;

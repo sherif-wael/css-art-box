@@ -4,11 +4,14 @@ import getHtmlCode from "../utils/getHtmlCode";
 import getCssCode from "../utils/getCssCode"
 
 
-function Code({layers, container}){
+function Code({layers, container, history}){
     let htmlCode = getHtmlCode(layers, "container", 0);
     let cssCode = getCssCode(layers, container);
     return (
         <div className="code-page">
+            <button onClick={() => history.goBack()} className="btn go-back">
+                <i className="fas fa-long-arrow-alt-left"></i>
+            </button>
             <div className="pre">
                 <h3>HTML</h3>
                 <pre dangerouslySetInnerHTML={{__html: htmlCode}}>

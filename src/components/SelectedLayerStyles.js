@@ -23,7 +23,7 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
     return (
         <div>
             <div className="lg-margin flex-align-center">
-                <label className="label" htmlFor="layerName">layer:</label>
+                <label className="label" htmlFor="layerName">div:</label>
                 <input type="text" className="flex-grow text-input" id="layerName" placeholder="id"
                         value={layer.id} disabled />
                 <button className="btn delete-shadow-btn" onClick={() => deleteLayer(layer.id)}><i className="fas fa-trash-alt"></i></button>
