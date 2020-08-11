@@ -30,7 +30,7 @@ function ContainerValues({container, addLayer, setContainerStyles, layers, histo
                         onChange={e => setContainerStyles("perspective", e.target.value)} />
             </div>
             <div className="flex lg-margin">
-                <input type="text" className="flex-grow text-input" onChange={e => setName(e.target.value)} value={name} placeholder="id" />
+                <input type="text" className="flex-grow text-input" onChange={e => setName(e.target.value)} value={name} placeholder="An ID for the div" />
                 <button onClick={() => handleClick(name)} className="add-layer-btn btn white-btn">add div</button>
             </div>
             <div className="flex-center lg-margin">

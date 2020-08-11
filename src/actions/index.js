@@ -4,7 +4,8 @@ import {SET_CONTAINER_STYLES, ADD_LAYER, DELETE_LAYER, SELECT_LAYER,
         TOGGLE_BORDER_VIEW, SET_LAYER_BACKGROUND_COLOR, SET_LAYAER_BORDER,
         SET_LAYER_Z_INDEX, DELETE_LAYER_SHADOW, SET_LAYER_RELATIVITY, SET_LAYER_CLIP_PATH, RESET_STATE,
         SET_LAYER_GRADIENT, CHANGE_GRADIENT_TYPE, SET_GRADIENT_LAYOUT,
-        ADD_GRADIENT_COLOR, DELETE_GRADIENT_COLOR, SET_GRADIENT_COLOR} from "../reducers/types";
+        ADD_GRADIENT_COLOR, DELETE_GRADIENT_COLOR, SET_GRADIENT_COLOR,
+        ADD_CLIP_PATH_POINT, DELETE_CLIP_PATH_POINT, SET_CLIP_PATH_POINT, APPLY_CLIP_PATH} from "../reducers/types";
 
 
 export const addLayer = id => dispatch => {
@@ -130,3 +131,24 @@ export const setGradientColor = (id, index, key, value) => dispatch => {
     let payload = {id, index, key, value};
     dispatch({type: SET_GRADIENT_COLOR, payload})
 }
+
+
+export const addClipPathPoint = (id, x, y) => dispatch => {
+    let payload = {id, x, y};
+    dispatch({type: ADD_CLIP_PATH_POINT, payload})
+}
+
+export const deleteClipPathPoint = (id, index) => dispatch => {
+    let payload = {id, index};
+    dispatch({type: DELETE_CLIP_PATH_POINT, payload})
+}
+
+export const setClipPathPoint = (id, index, x, y) => dispatch => {
+    let payload = {id, index, x, y};
+    dispatch({type: SET_CLIP_PATH_POINT, payload});
+}
+
+export const applyClipPath = (id, value) => dispatch => {
+    let payload = {id, value};
+    dispatch({type: APPLY_CLIP_PATH, payload})
+} 

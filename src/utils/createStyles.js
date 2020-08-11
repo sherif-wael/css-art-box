@@ -11,7 +11,7 @@ function createStyles(layerStyles){
     styles.borderLeft = createBorder(border.left);
     styles.borderRadius = createBorderRadius(borderRadius);
     styles.transform = createTransform(transform);
-    styles.clipPath = clipPath;
+    styles.clipPath = setClip(clipPath);
     styles.width = `${dimensions.width}px`;
     styles.height = `${dimensions.height}px`;
     styles.boxShadow = createShadows(shadows);
@@ -45,6 +45,15 @@ function createShadows(shadows){
     return shadow
 }
 
+export function setClip({points, apply}, forcss){
+    if(points.length === 0 || !apply){
+        return forcss ? "" : "none";
+    }
+    let value = points.map(({x, y}) => {
+        return `${x}% ${y}%`
+    }).join(", ");
+    return `polygon(${value})`;
+}
 
 // create css style format
 
@@ -73,12 +82,6 @@ export function setLayerShadows(shadows){
     return `${createShadows(shadows)}`
 }
 
-export function setLayerClipPath(clipPath){
-    if(clipPath){
-        return `${clipPath}`
-    }
-    return ""
-}
 
 export function setLayerRadius(borderRadius){
     if(Object.keys(borderRadius).every(borderPos => 
@@ -103,5 +106,6 @@ export function setLayerBorder(border, pos){
 export function setLayerZIndex(zIndex){
     return zIndex === 1 ? "" : `${zIndex}`
 }
+
 
 export default createStyles;

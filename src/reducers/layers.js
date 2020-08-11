@@ -4,7 +4,8 @@ import {ADD_LAYER, DELETE_LAYER, SET_LAYER_POSITION, SET_LAYER_DIMENSIONS,
         ADD_LAYER_SHADOW, TOGGLE_BORDER_VIEW, SET_LAYER_RADIUS, SET_LAYER_Z_INDEX, DELETE_LAYER_SHADOW,
         SET_LAYER_RELATIVITY, SET_LAYER_CLIP_PATH, RESET_STATE, SET_LAYER_GRADIENT,
         SET_GRADIENT_LAYOUT, ADD_GRADIENT_COLOR, 
-        DELETE_GRADIENT_COLOR, SET_GRADIENT_COLOR, CHANGE_GRADIENT_TYPE} from "./types";
+        DELETE_GRADIENT_COLOR, SET_GRADIENT_COLOR, CHANGE_GRADIENT_TYPE,
+        ADD_CLIP_PATH_POINT, DELETE_CLIP_PATH_POINT, SET_CLIP_PATH_POINT, APPLY_CLIP_PATH} from "./types";
 
 const initialState = [];
 
@@ -343,6 +344,75 @@ function layers(state = [], action){
                                     }
                                     return color
                                 })
+                            }
+                        }
+                    }
+                }
+                return layer
+            })
+        case ADD_CLIP_PATH_POINT: 
+            return state.map(layer => {
+                if(layer.id === action.payload.id){
+                    return {
+                        ...layer, 
+                        styles: {
+                            ...layer.styles,
+                            clipPath: {
+                                ...layer.styles.clipPath,
+                                points: [...layer.styles.clipPath.points, {x: action.payload.x, y: action.payload.y}]
+                            }
+                        }
+                    }
+                }
+                return layer
+            })
+        case DELETE_CLIP_PATH_POINT:
+            return state.map(layer => {
+                if(layer.id === action.payload.id){
+                    return {
+                        ...layer,
+                        styles: {
+                            ...layer.styles,
+                            clipPath: {
+                                ...layer.styles.clipPath,
+                                points: layer.styles.clipPath.points.filter((point, i) => i !== action.payload.index)
+                            }
+                        }
+                    }
+                }
+                return layer
+            })
+        case SET_CLIP_PATH_POINT: 
+            return state.map(layer => {
+                if(layer.id === action.payload.id){
+                    return {
+                        ...layer,
+                        styles: {
+                            ...layer.styles,
+                            clipPath: {
+                                ...layer.styles.clipPath,
+                                points: layer.styles.clipPath.points.map((point, i) => {
+                                    if(i === action.payload.index){
+                                        return {x: action.payload.x, y: action.payload.y}
+                                    }
+                                    return point
+                                })
+                            }
+                        }
+                    }
+                }
+                return layer
+            })
+        case APPLY_CLIP_PATH: 
+            return state.map(layer => {
+                if(layer.id === action.payload.id){
+                    return {
+                        ...layer, 
+                        styles: {
+                            ...layer.styles,
+                            clipPath: {
+                                ...layer.styles.clipPath,
+                                apply: action.payload.value
                             }
                         }
                     }

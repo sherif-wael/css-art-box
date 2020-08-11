@@ -1,5 +1,5 @@
 import {space, span} from "./getHtmlCode";
-import {setLayerBgColor, setLayerTransform, setLayerShadows, setLayerClipPath, setLayerRadius, setLayerBorder, setLayerZIndex} from "./createStyles";
+import {setLayerBgColor, setLayerTransform, setLayerShadows, setClip, setLayerRadius, setLayerBorder, setLayerZIndex} from "./createStyles";
 
 
 function setContainerProps(container){
@@ -67,7 +67,7 @@ function setLayerProps(layer){
         },
         {
             prop: "clip-path",
-            value: setLayerClipPath(layer.styles.clipPath)
+            value: setClip(layer.styles.clipPath, true)
         },
         {
             prop: "border-top",

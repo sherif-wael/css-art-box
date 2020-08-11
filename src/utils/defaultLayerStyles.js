@@ -71,7 +71,10 @@ const styles = {
         color: "#000000",
         transparent: false
     },
-    clipPath: "",
+    clipPath: {
+        points: [{x: 20, y: 0}, {x: 80, y: 0}, {x: 100, y: 100}, {x: 0, y: 100}],
+        apply: false
+    },
     dimensions: {
         width: 200, 
         height: 200

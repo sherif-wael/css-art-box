@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {UnmountClosed, Collapse} from "react-collapse";
 import {setLayerRelativity, setLayerBackground, setLayerRadius, 
-        setLayerZIndex, setLayerTransform, deleteLayer, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, setLayerPosition} from "../actions/index";
+        setLayerZIndex, setLayerTransform, deleteLayer, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, setLayerPosition, applyClipPath} from "../actions/index";
 import RangeInput from "./RangeInput";
 import RadiusControl from "./RadiusControl";
 import {createBorderRadius} from "../utils/createStyles";
@@ -9,9 +9,10 @@ import AngleInput from "./AngleInput";
 import {connect} from "react-redux"
 import LayerShadows from "./LayerShadows";
 import GradientController from "./GradientController";
+import ClipPathController from "./ClipPathController";
 
-function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, setLayerRadius, setLayerTransform, setLayerZIndex, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, deleteLayer, setLayerPosition}){
-    let [state, setState] = useState({borderRadius: false, transform: false, border: false});
+function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, setLayerRadius, setLayerTransform, setLayerZIndex, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, deleteLayer, setLayerPosition, applyClipPath}){
+    let [state, setState] = useState({borderRadius: false, transform: false, border: false, clipPath: false});
     let [borderPos, setBorderPos] = useState("top");
     let applyForAll = () => {
         ["top", "right", "bottom", "left"].filter(pos => pos !== borderPos).forEach(pos => {
@@ -76,11 +77,6 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                 <label className="label" htmlFor="layerZIndex">z-index:</label>
                 <input type="number" className="number-input" value={layer.styles.zIndex}
                        onChange={e => setLayerZIndex(layer.id, e.target.value)} />
-            </div>
-            <div className="lg-margin">
-                <label className="label" htmlFor="layerClip">clip-path:</label>
-                <input type="text" className="text-input" value={layer.styles.clipPath} 
-                       placeholder="eg.polygon()" onChange={e => setLayerClipPath(layer.id, e.target.value)} />
             </div>
             <div className="border-container">
                 <div className="divider"></div>
@@ -184,8 +180,30 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
             </div>
             <LayerShadows layer={layer} />
             <GradientController layer={layer} />
+            <div className="clip-wrapper">
+                <div className="divider"></div>
+                <div class="flex-space-between">
+                    <div className="flex-align-center collapse-header"  
+                        onClick={() => setState({...state, clipPath: !state.clipPath})}>
+                        <i className={`fas fa-angle-right ${state.clipPath ? "rotate" : ""}`}></i>
+                        <p>clip-path</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" className="checkbox" checked={layer.styles.clipPath.checked}
+                                onChange={e => applyClipPath(layer.id, e.target.checked)} />
+                        <label class="label">apply</label>
+                    </div>
+                </div>
+                <Collapse isOpened={state.clipPath}>
+                    <div className="clip-tool">
+                        <ClipPathController layer={layer} />
+                        <p class="note text-center">*add points by clicking the box</p>
+                        <p class="note text-center">*drag the points to reshape the box</p>
+                    </div>
+                </Collapse>
+            </div>
         </div>
     )
 }
 
-export default connect(() => ({}), {setLayerRelativity, setLayerBackground, setLayerRadius, setLayerTransform, setLayerZIndex, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, deleteLayer, setLayerPosition})(SelectedLayerStyles)
+export default connect(() => ({}), {setLayerRelativity, setLayerBackground, setLayerRadius, setLayerTransform, setLayerZIndex, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, deleteLayer, setLayerPosition, applyClipPath})(SelectedLayerStyles)
