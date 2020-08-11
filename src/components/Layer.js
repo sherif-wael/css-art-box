@@ -26,7 +26,7 @@ function Layer({selected, layers, layer, selectLayer, setLayerPosition, setLayer
     }
     let styles = createStyles(layer.styles)
     return (
-        <div className="layer" onMouseDown={handleMouseDown} ref={wrapper} style={styles} onTouchStart={e => handleTouch({e, parent: document, onMove: setPos})}> 
+        <div className="layer touch" onMouseDown={handleMouseDown} ref={wrapper} style={styles} onTouchStart={e => handleTouch({e, parent: document, onMove: setPos})}> 
             {selected === layer.id && <Resize resize={resize}  />}
             {
                 layers.filter(l => l.styles.relativeTo === layer.id).map(lay => (

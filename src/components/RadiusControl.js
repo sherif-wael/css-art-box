@@ -106,7 +106,7 @@ function RadiusControl({layer, setLayerRadius}){
                             [fixedPos]: fixed[fixedPos],
                             transform: translate
                         }
-                    return <span className="radius-span" 
+                    return <span className="radius-span touch" 
                                  style={styles} 
                                 onMouseDown={e => {
                                     selectSpan(border, pos)

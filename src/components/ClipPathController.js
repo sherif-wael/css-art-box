@@ -36,7 +36,7 @@ function ClipPathController({layer, addClipPathPoint, deleteClipPathPoint, setCl
         <div className="clip-controller" ref={wrapper} onMouseDown={addPoint}>
             {
                 clipPath.points.map(({x, y}, i) => (
-                    <span className="clip-point flex-center" key={i}
+                    <span className="clip-point flex-center touch" key={i}
                           style={{top: `${y}%`, left: `${x}%`}}
                           onMouseDown={e => {
                               selectPoint(i);

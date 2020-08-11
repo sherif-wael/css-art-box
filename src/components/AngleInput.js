@@ -13,7 +13,7 @@ function AngleInput({change, value}){
         change(Math.round(angle));
     }
     return (
-        <div className="angle-input" ref={wrapper} onTouchStart={e => handleTouch({e, parent: document, onMove: callback})}
+        <div className="angle-input touch" ref={wrapper} onTouchStart={e => handleTouch({e, parent: document, onMove: callback})}
             style={{transform: `rotate(${value}deg)`}}
             onMouseDown={e => handler({e, parent: document, onMove: callback})} >
         </div>
