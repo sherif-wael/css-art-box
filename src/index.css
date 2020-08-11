@@ -213,7 +213,6 @@ body {
 
 .layer{
   position: absolute;
-  transition: 20ms linear;
   cursor: pointer;
 }
 
