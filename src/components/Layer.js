@@ -2,6 +2,7 @@ import React, {useRef, useState} from "react";
 import handler from "../utils/handleMouseDown";
 import Resize from "./Resize";
 import createStyles from "../utils/createStyles"
+import handleTouch from "../utils/handleTouch";
 
 function Layer({selected, layers, layer, selectLayer, setLayerPosition, setLayerDimensions, setPos}){
     let wrapper = useRef(null);
@@ -26,7 +27,7 @@ function Layer({selected, layers, layer, selectLayer, setLayerPosition, setLayer
     let styles = createStyles(layer.styles)
     return (
         <div className="layer" onMouseDown={handleMouseDown} ref={wrapper} style={styles}>
-            {selected === layer.id && <Resize resize={resize} />}
+            {selected === layer.id && <Resize resize={resize} onTouchStart={e => handleTouch({e, parent: document, onMove: setPos})} />}
             {
                 layers.filter(l => l.styles.relativeTo === layer.id).map(lay => (
                     <Layer layer={lay} setLayerDimensions={setLayerDimensions} setLayerPosition={setLayerPosition} layers={layers}
