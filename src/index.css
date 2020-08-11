@@ -918,7 +918,8 @@ footer span{
   .pre{
     font-size: 16px;
   }
-  .styles-controller{
-    font-size: 14px;
+  .container-header h2{
+    font-size: 1.2em;
+    padding: 5px 8px;
   }
 }
