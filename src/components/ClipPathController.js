@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {addClipPathPoint, deleteClipPathPoint, setClipPathPoint} from "../actions/index";
 import handler from "../utils/handleMouseDown";
 import {setClip} from "../utils/createStyles";
+import handleTouch from "../utils/handleTouch";
 
 function ClipPathController({layer, addClipPathPoint, deleteClipPathPoint, setClipPathPoint}){
     let [selectedPoint, selectPoint] = useState(0);
@@ -35,18 +36,19 @@ function ClipPathController({layer, addClipPathPoint, deleteClipPathPoint, setCl
         <div className="clip-controller" ref={wrapper} onMouseDown={addPoint}>
             {
                 clipPath.points.map(({x, y}, i) => (
-                    <span className="clip-point flex-center" 
+                    <span className="clip-point flex-center" key={i}
                           style={{top: `${y}%`, left: `${x}%`}}
                           onMouseDown={e => {
                               selectPoint(i);
                               handler({e, parent: document, onMove: handlePointDown(i)})
                           }}
+                          onTouchStart={e => handleTouch({e, parent: document, onMove: handlePointDown(i)})}
                           >
                         {i + 1}
                       {
                         i === selectedPoint ? 
                         <button className="delete-point-btn btn" onClick={() => deletePoint(i)}>
-                            <i class="fas fa-window-close"></i>
+                            <i className="fas fa-window-close"></i>
                         </button>   :
                         null
                       }  

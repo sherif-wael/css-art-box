@@ -182,7 +182,7 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
             <GradientController layer={layer} />
             <div className="clip-wrapper">
                 <div className="divider"></div>
-                <div class="flex-space-between">
+                <div className="flex-space-between">
                     <div className="flex-align-center collapse-header"  
                         onClick={() => setState({...state, clipPath: !state.clipPath})}>
                         <i className={`fas fa-angle-right ${state.clipPath ? "rotate" : ""}`}></i>
@@ -191,14 +191,14 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                     <div>
                         <input type="checkbox" className="checkbox" checked={layer.styles.clipPath.checked}
                                 onChange={e => applyClipPath(layer.id, e.target.checked)} />
-                        <label class="label">apply</label>
+                        <label className="label">apply</label>
                     </div>
                 </div>
                 <Collapse isOpened={state.clipPath}>
                     <div className="clip-tool">
                         <ClipPathController layer={layer} />
-                        <p class="note text-center">*add points by clicking the box</p>
-                        <p class="note text-center">*drag the points to reshape the box</p>
+                        <p className="note text-center">*add points by clicking the box</p>
+                        <p className="note text-center">*drag the points to reshape the box</p>
                     </div>
                 </Collapse>
             </div>

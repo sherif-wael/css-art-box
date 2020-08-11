@@ -3,6 +3,7 @@ import handler from "../utils/handleMouseDown";
 // import {setLayerRadius} from "../actions/index";
 import {connect} from "react-redux";
 import {createBorderRadius} from "../utils/createStyles"
+import handleTouch from "../utils/handleTouch";
 
 let spans = [
     {
@@ -110,7 +111,12 @@ function RadiusControl({layer, setLayerRadius}){
                                 onMouseDown={e => {
                                     selectSpan(border, pos)
                                     handler({e, parent: document, onMove: callback})
-                                }} key={key}></span>
+                                }} key={key}
+                                onTouchStart={e => {
+                                    selectSpan(border, pos)
+                                    handleTouch({e, parent: document, onMove: callback})
+                                }}
+                                ></span>
                 })
             }
             <div className="radius-illustration" style={{borderRadius: createBorderRadius(layer.styles.borderRadius)}}></div>

@@ -1,5 +1,5 @@
 export default function handler({e, parent, onMove}){
-    e.preventDefault();
+    // e.preventDefault();
     e.stopPropagation();
     let handleMove = moveEvent => {
         onMove(moveEvent.touches[0]);
