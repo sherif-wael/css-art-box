@@ -5,6 +5,7 @@ import handler from "../utils/handleMouseDown";
 import {Collapse} from "react-collapse";
 import {setGradient} from "../utils/gradientMethods"
 import GradientLayout from "./GradientLayout";
+import handleTouch from "../utils/handleTouch";
 
 function GradientController({layer, setLayerGradient, changeGradientType, setGradientLayout, addGradientColor, deleteGradientColor, setGradientColor}){
     let [selectedColor, selectColor] = useState(0);
@@ -71,8 +72,9 @@ function GradientController({layer, setLayerGradient, changeGradientType, setGra
                                     selectColor(i);
                                     handler({e, parent: document, onMove: handleMove(i)})
                                 }}
+                                onTouchStart={e => handleTouch({e, parent: document, onMove: handleMove(i)})}
                                 style={{left: `${color.start}%`}} key={i}
-                                className={selectedColor === i ? "selected controller" : "controller"}
+                                className={selectedColor === i ? "selected controller touch" : "controller touch"}
                                 >
                                     <span className="start-value">{color.start}</span>
                                 </span>

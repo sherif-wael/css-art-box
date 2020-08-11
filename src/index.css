@@ -861,6 +861,7 @@ footer span{
   .pre{
     height: auto;
     min-height: 50vh;
+    font-size: 18px;
   }
   .drawer{
     flex-direction: column;
@@ -871,6 +872,13 @@ footer span{
   }
   .styles-controller{
     max-width: 100%;
+  }
+  .clip-points{
+    width: 25px;
+    height: 25px;
+  }
+  .delete-point-btn{
+    font-size: 18px;
   }
 }
 
@@ -906,5 +914,11 @@ footer span{
   }
   .css-code-view{
     left: 10px;
+  }
+  .pre{
+    font-size: 16px;
+  }
+  .styles-controller{
+    font-size: 14px;
   }
 }
