@@ -835,13 +835,23 @@ footer span{
   font-weight: 600;
   line-height: 1.3em;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .video-wrapper .video{
   max-width: 100%;
   margin: 0 auto;
   display: block;
 }
+
+.video-wrapper .to-playground{
+  color: #240766;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3em;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
 /* media queries */
 
 

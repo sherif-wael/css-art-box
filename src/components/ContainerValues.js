@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {addLayer, setContainerStyles, resetState} from "../actions/index";
 import {connect} from "react-redux";
 import {withRouter} from "react-router";
-
+import {Link} from "react-router-dom";
 
 function ContainerValues({container, addLayer, setContainerStyles, layers, history, resetState}){
     let [name, setName] = useState("");
@@ -16,6 +16,7 @@ function ContainerValues({container, addLayer, setContainerStyles, layers, histo
     }
     return (
         <div>
+            <p className="note text-center">*check <Link to="/how-to-use">this video</Link> to learn more about css tools.</p>
             <div className="container-header flex-center">
                 <h2>CONTAINER</h2>
             </div>
