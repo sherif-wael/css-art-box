@@ -70,7 +70,7 @@ body {
 .grid-col-2{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-gap: 20px;
 }
 
 .grid-col-3{
@@ -163,17 +163,17 @@ body {
   margin-right: 5px;
 }
 
-.number-input:focus, .number-input:active{
+.number-input:focus, .number-input:active, input[type="number"]:active, input[type="number"]:focus{
   outline: none;
 }
 
-.number-input::-webkit-outer-spin-button,
-.number-input::-webkit-inner-spin-button {
+.number-input::-webkit-outer-spin-button, input[type="number"]::-webkit-outer-spin-button,
+.number-input::-webkit-inner-spin-button, input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.number-input{
+.number-input, input[type="number"]{
   -moz-appearance: textfield;
 }
 
@@ -203,6 +203,7 @@ body {
 .checkbox{
   margin-right: 8px;
 }
+
 
 /* styles */
 

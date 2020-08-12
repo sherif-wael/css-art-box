@@ -11,6 +11,7 @@ import LayerShadows from "./LayerShadows";
 import GradientController from "./GradientController";
 import ClipPathController from "./ClipPathController";
 
+
 function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, setLayerRadius, setLayerTransform, setLayerZIndex, setLayerBorder, toggleBorderView, setLayerDimensions, setLayerClipPath, deleteLayer, setLayerPosition, applyClipPath}){
     let [state, setState] = useState({borderRadius: false, transform: false, border: false, clipPath: false});
     let [borderPos, setBorderPos] = useState("top");
@@ -35,34 +36,28 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                        value={layer.styles.relativeTo} 
                        onChange={e => setLayerRelativity(layer.id, e.target.value)} />
             </div>
-            <div className="lg-margin">
-                <div className="grid-col-2">
-                    <div className="flex">
-                        <label className="label" htmlFor="layerWidth">width:</label>
-                        <input type="number" className="number-input" value={layer.styles.dimensions.width} 
-                              onChange={e => setLayerDimensions(layer.id, {width: e.target.value, height: layer.styles.dimensions.height})} />
-                    </div>
-                    <div className="flex">
-                        <label className="label" htmlFor="layerWidth">height:</label>
-                        <input type="number" className="number-input" value={layer.styles.dimensions.height} 
-                              onChange={e => setLayerDimensions(layer.id, {height: e.target.value, width: layer.styles.dimensions.width})} />
-                    </div>
+            <div class="lg-margin grid-col-2 items-start">
+                <div class="flex-align-center">
+                    <label className="label" htmlFor="width">width:</label>
+                    <input type="number" className="number-input" id="width" value={layer.styles.dimensions.width}
+                            onChange={e => setLayerDimensions(layer.id, {width: e.target.value, height: layer.styles.dimensions.height})} />
+                </div>
+                <div class="flex-align-center">
+                    <label className="label" htmlFor="height">height:</label>
+                    <input type="number" className="number-input" id="height" value={layer.styles.dimensions.height}
+                            onChange={e => setLayerDimensions(layer.id, {width: layer.styles.dimensions.width, height: e.target.value})} />
                 </div>
             </div>
-            <div className="lg-margin">
-                <div className="grid-col-2">
-                    <div className="flx-align-center">
-                        <label className="label" htmlFor="top">top:</label>
-                        <input type="number" className="number-input" value={layer.styles.pos.y}
-                                onChange={e => setLayerPosition(layer.id, {x: layer.styles.pos.x, y: e.target.value})} />
-                        %
-                    </div>
-                    <div className="flx-align-center">
-                        <label className="label" htmlFor="top">left:</label>
-                        <input type="number" className="number-input" value={layer.styles.pos.x}
-                                onChange={e => setLayerPosition(layer.id, {y: layer.styles.pos.y, x: e.target.value})} />
-                        %
-                    </div>
+            <div className="lg-margin grid-col-2">
+                <div class="flex-align-center">
+                    <label className="label" htmlFor="top">top:</label>
+                    <input type="number" className="number-input" id="top" value={layer.styles.pos.y}
+                            onChange={e => setLayerPosition(layer.id, {x: layer.styles.pos.x, y: e.target.value})} />%
+                </div>
+                <div class="flex-align-center">
+                    <label className="label" htmlFor="left">left:</label>
+                    <input type="number" className="number-input" id="left" value={layer.styles.pos.x}
+                            onChange={e => setLayerPosition(layer.id, {x: e.target.value, y: layer.styles.pos.y})} /> %
                 </div>
             </div>
             <div className="lg-margin flex-align-center">
@@ -73,10 +68,10 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                 <input type="color" value={layer.styles.backgroundColor.color} className="color-input"
                        onChange={e => setLayerBackground(layer.id, "color", e.target.value)} />
             </div>
-            <div className="lg-margin">
-                <label className="label" htmlFor="layerZIndex">z-index:</label>
-                <input type="number" className="number-input" value={layer.styles.zIndex}
-                       onChange={e => setLayerZIndex(layer.id, e.target.value)} />
+            <div className="lg-margin flex">
+               <label className="label" htmlFor="zIndex">z-index:</label>
+               <input type="number" className="number-input" value={layer.styles.zIndex}
+                        onChange={e => setLayerZIndex(layer.id, e.target.value)} />
             </div>
             <div className="border-container">
                 <div className="divider"></div>
@@ -189,7 +184,7 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                         <p>clip-path</p>
                     </div>
                     <div>
-                        <input type="checkbox" className="checkbox" checked={layer.styles.clipPath.checked}
+                        <input type="checkbox" className="checkbox" checked={layer.styles.clipPath.apply}
                                 onChange={e => applyClipPath(layer.id, e.target.checked)} />
                         <label className="label">apply</label>
                     </div>

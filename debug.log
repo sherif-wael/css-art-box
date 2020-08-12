@@ -1,0 +1,16 @@
+[0812/150350.098:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.098:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.099:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.099:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.104:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.104:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.110:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.110:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.110:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.110:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.136:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.137:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.143:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.143:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
+[0812/150350.146:WARNING:process_subrange_reader.cc(81)] attempt to read outside of C:\Windows\system32\shcore.dll range 0x0 + 0x0 (64) at range 0x0 + 0x40 (64)
+[0812/150350.146:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\system32\shcore.dll
