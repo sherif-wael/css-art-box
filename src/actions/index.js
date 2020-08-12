@@ -11,6 +11,7 @@ import {SET_CONTAINER_STYLES, ADD_LAYER, DELETE_LAYER, SELECT_LAYER,
 export const addLayer = id => dispatch => {
     let payload = {id};
     dispatch({type: ADD_LAYER, payload})
+    dispatch({type: SELECT_LAYER, payload: id})
 }
 
 export const deleteLayer = id => dispatch => {
