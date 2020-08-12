@@ -822,6 +822,25 @@ footer span{
   50%{transform: scale(1.2)}
 }
 
+
+.video-wrapper{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.video-wrapper h2{
+  color: #240766;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.3em;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.video-wrapper .video{
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
 /* media queries */
 
 

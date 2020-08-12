@@ -7,6 +7,7 @@ import Playground from "./Playground";
 import StylesController from "./StylesController"
 import Code from "./Code";
 import LandingPage from "./LandingPage";
+import HowToUse from "./HowToUse";
 
 function App(){
   let [state, setState] = useState(false);
@@ -22,6 +23,7 @@ function App(){
             </div>
           )} />
           <Route path="/code" component={Code} />
+          <Route path="/how-to-use" component={HowToUse} />
         </Switch>
       </Provider>
     </BrowserRouter>
