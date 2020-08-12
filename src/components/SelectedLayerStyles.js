@@ -31,7 +31,7 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                 <button className="btn delete-shadow-btn" onClick={() => deleteLayer(layer.id)}><i className="fas fa-trash-alt"></i></button>
             </div>
             <div className="lg-margin flex">
-                <label className="label" htmlFor="layerRelative">relative-to:</label>
+                <label className="label" htmlFor="layerRelative">parent-div:</label>
                 <input type="text" className="flex-grow text-input" placeholder="layer parent" 
                        value={layer.styles.relativeTo} 
                        onChange={e => setLayerRelativity(layer.id, e.target.value)} />
