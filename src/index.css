@@ -245,7 +245,6 @@ body {
 .collapse-header{
   box-sizing: border-box;
   cursor: pointer;
-  /* padding-left: 10px; */
 }
 
 .collapse-header i{
@@ -260,7 +259,6 @@ body {
   color: rgb(0, 0, 0, 0.6);
 }
 .collapsible-area{
-  /* background-color: var(--lighter-bg-color); */
   padding-left: 10px;
   box-sizing: border-box;
 }
@@ -400,7 +398,6 @@ body {
   background-color: #30e35f;
   transform: translate(-50%, -50%);
   z-index: -1;
-  transition: 100ms linear;
 }
 
 
