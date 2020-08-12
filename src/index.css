@@ -228,6 +228,7 @@ body {
   position: sticky;
   top: 0;
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .container-header h2{
