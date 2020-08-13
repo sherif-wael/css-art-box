@@ -30,12 +30,13 @@ function SelectedLayerStyles({layer, setLayerRelativity, setLayerBackground, set
                         value={layer.id} disabled />
                 <button className="btn delete-shadow-btn" onClick={() => deleteLayer(layer.id)}><i className="fas fa-trash-alt"></i></button>
             </div>
-            <div className="lg-margin flex">
+            <div className="mg-top-20 mg-btm flex">
                 <label className="label" htmlFor="layerRelative">parent-div:</label>
                 <input type="text" className="flex-grow text-input" placeholder="layer parent" 
                        value={layer.styles.relativeTo} 
                        onChange={e => setLayerRelativity(layer.id, e.target.value)} />
             </div>
+            <p className="note mg-btm-20 text-center">*set a new parent for the div using a valid id, default is container</p>
             <div class="lg-margin grid-col-2 items-start">
                 <div class="flex-align-center">
                     <label className="label" htmlFor="width">width:</label>
